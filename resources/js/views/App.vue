@@ -1,7 +1,22 @@
 <template>
-    <div>
+  <div>
+    <app-auth v-show="!authenticated"></app-auth>
 
-        <router-view></router-view>
-
-    </div>
+    <app-dashboard v-show="authenticated"></app-dashboard>
+  </div>
 </template>
+<script>
+import Dashboard from "@/js/components/Dashboard";
+import Auth from "@/js/components/Auth";
+export default {
+  components: {
+    "app-auth": Auth,
+    "app-dashboard": Dashboard
+  },
+  data: function() {
+    return {
+      authenticated: true
+    };
+  }
+};
+</script>

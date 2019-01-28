@@ -34,5 +34,4 @@ const app = new Vue({
     router: Routes,
     render: h => h(App)
 });
-console.log("wdkfdkf")
 export default app;
