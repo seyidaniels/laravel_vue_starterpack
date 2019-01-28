@@ -1,7 +1,12 @@
-<nav class="navbar navbar-expand-lg bg-dark fixed-top navbar-transparent" color-on-scroll="10">
+<nav class="
+
+navbar navbar-expand-lg bg-dark fixed-top
+
+{{ Request::path() !==  '/' ? '' : 'navbar-transparent'  }}
+" color-on-scroll="10">
     <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;" >
         <div class="navbar-translate">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 <img src="/landing/assets/img/logo-white.png"  class="img-fluid img-white" style="width: 50%;" alt="">
                 <img src="/landing/assets/img/logo-white.png"class="img-fluid img-blue" alt="">
             </a>
@@ -16,11 +21,11 @@
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link page-scroll" href="#">
-                        <p>Home</p>
+                        <p>Home </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="./timeline.html" class="nav-link"style="font-size: 14px;">
+                    <a href="/timeline" class="nav-link"style="font-size: 14px;">
                        Timeline
                     </a>
                 </li>
@@ -36,7 +41,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                        <a  href="{{url('register')}}">
+                        <a  href="{{url('/dashboard')}}">
                     <button class="nav-link btn btn-orange" style="border-radius: 40px;" >
 
                             <a href="/dashboard">Apply Now</a>

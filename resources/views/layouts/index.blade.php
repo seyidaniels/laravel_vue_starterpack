@@ -4,11 +4,10 @@
 @include('includes.header')
 <body class="index-page sidebar-collapse">
    @include('includes.navbar')
-
+    @yield('extra-css')
     @yield('content')
 
-
-
+    @include('includes.address')
 
                     <!-- Contact Modal -->
 
@@ -33,7 +32,7 @@
 <script src="/landing/assets/scroll/scrolling-nav.js"></script>
 <script src="/landing/assets/particles-js/particles.js"></script>
 <script src="/landing/assets/particles-js/demo/js/app.js"></script>
-
+@yield('extra-js')
 
 <script type="text/javascript">
     $('.logos').slick({
