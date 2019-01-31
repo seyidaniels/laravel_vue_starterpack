@@ -20,7 +20,7 @@
 
             <div class="text-center">
               <img
-                src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/illustrations/designer-life.svg"
+                src="/dashboard_assets/assets//dashboard_assets/assets/img/illustrations/designer-life.svg"
                 alt="..."
                 class="img-fluid mb-3"
               >
@@ -145,7 +145,7 @@
                       <!-- Avatar -->
                       <a href="profile-posts.html" class="avatar">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-5.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-5.jpg"
                           alt="..."
                           class="avatar-img rounded-circle"
                         >
@@ -175,7 +175,7 @@
                       <!-- Avatar -->
                       <a href="profile-posts.html" class="avatar">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-6.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-6.jpg"
                           alt="..."
                           class="avatar-img rounded-circle"
                         >
@@ -205,7 +205,7 @@
                       <!-- Avatar -->
                       <a href="profile-posts.html" class="avatar">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-7.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-7.jpg"
                           alt="..."
                           class="avatar-img rounded-circle"
                         >
@@ -235,7 +235,7 @@
                       <!-- Avatar -->
                       <a href="profile-posts.html" class="avatar">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-8.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-8.jpg"
                           alt="..."
                           class="avatar-img rounded-circle"
                         >
@@ -296,7 +296,7 @@
                       <!-- Avatar -->
                       <div class="avatar">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/teams/team-logo-1.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/teams/team-logo-1.jpg"
                           alt="..."
                           class="avatar-img rounded"
                         >
@@ -321,7 +321,7 @@
                       <!-- Avatar -->
                       <div class="avatar">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/teams/team-logo-2.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/teams/team-logo-2.jpg"
                           alt="..."
                           class="avatar-img rounded"
                         >
@@ -346,7 +346,7 @@
                       <!-- Avatar -->
                       <div class="avatar avatar-4by3">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/projects/project-1.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/projects/project-1.jpg"
                           alt="..."
                           class="avatar-img rounded"
                         >
@@ -371,7 +371,7 @@
                       <!-- Avatar -->
                       <div class="avatar avatar-4by3">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/projects/project-2.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/projects/project-2.jpg"
                           alt="..."
                           class="avatar-img rounded"
                         >
@@ -396,7 +396,7 @@
                       <!-- Avatar -->
                       <div class="avatar avatar-4by3">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/projects/project-3.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/projects/project-3.jpg"
                           alt="..."
                           class="avatar-img rounded"
                         >
@@ -421,7 +421,7 @@
                       <!-- Avatar -->
                       <div class="avatar">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-1.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-1.jpg"
                           alt="..."
                           class="avatar-img rounded-circle"
                         >
@@ -445,7 +445,7 @@
                       <!-- Avatar -->
                       <div class="avatar">
                         <img
-                          src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-2.jpg"
+                          src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-2.jpg"
                           alt="..."
                           class="avatar-img rounded-circle"
                         >
@@ -498,7 +498,7 @@
                     <!-- Avatar -->
                     <div class="avatar avatar-sm">
                       <img
-                        src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-1.jpg"
+                        src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-1.jpg"
                         alt="..."
                         class="avatar-img rounded-circle"
                       >
@@ -525,7 +525,7 @@
                     <!-- Avatar -->
                     <div class="avatar avatar-sm">
                       <img
-                        src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-2.jpg"
+                        src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-2.jpg"
                         alt="..."
                         class="avatar-img rounded-circle"
                       >
@@ -549,7 +549,7 @@
                     <!-- Avatar -->
                     <div class="avatar avatar-sm">
                       <img
-                        src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-3.jpg"
+                        src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-3.jpg"
                         alt="..."
                         class="avatar-img rounded-circle"
                       >
@@ -576,7 +576,7 @@
                     <!-- Avatar -->
                     <div class="avatar avatar-sm">
                       <img
-                        src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-4.jpg"
+                        src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-4.jpg"
                         alt="..."
                         class="avatar-img rounded-circle"
                       >
@@ -600,7 +600,7 @@
                     <!-- Avatar -->
                     <div class="avatar avatar-sm">
                       <img
-                        src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-5.jpg"
+                        src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-5.jpg"
                         alt="..."
                         class="avatar-img rounded-circle"
                       >
@@ -627,7 +627,7 @@
                     <!-- Avatar -->
                     <div class="avatar avatar-sm">
                       <img
-                        src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-6.jpg"
+                        src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-6.jpg"
                         alt="..."
                         class="avatar-img rounded-circle"
                       >
@@ -651,7 +651,7 @@
                     <!-- Avatar -->
                     <div class="avatar avatar-sm">
                       <img
-                        src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-7.jpg"
+                        src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-7.jpg"
                         alt="..."
                         class="avatar-img rounded-circle"
                       >
@@ -678,7 +678,7 @@
                     <!-- Avatar -->
                     <div class="avatar avatar-sm">
                       <img
-                        src="/dashboard_/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-8.jpg"
+                        src="/dashboard_assets/assets//dashboard_assets/assets/img/avatars/profiles/avatar-8.jpg"
                         alt="..."
                         class="avatar-img rounded-circle"
                       >
