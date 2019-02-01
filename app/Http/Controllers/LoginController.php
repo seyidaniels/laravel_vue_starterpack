@@ -19,13 +19,13 @@ class LoginController extends Controller
         $validator = Validator::make($data, $rules);
 
         if($validator->fails()) {
-            return response()->json(['success'=> false, 'error'=> $validator->messages()], 401);
+            return response()->json(['success'=> false, 'error'=> $validator->messages()], 422);
         }
 
         try {
             // attempt to verify the credentials and create a token for the user
             if (! $token = JWTAuth::attempt($data)) {
-                return response()->json(['success' => false, 'error' => 'We cant find an account with this credentials. Please make sure you entered the right information and you have verified your email address.'], 404);
+                return response()->json(['success' => false, 'error' => 'Invalid Login Credentials']);
             }
         } catch (JWTException $e) {
             // something went wrong whilst attempting to encode the token

@@ -6,7 +6,7 @@
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#sidebarCollapse"
+        href="#"sidebarCollapse"
         aria-controls="sidebarCollapse"
         aria-expanded="false"
         aria-label="Toggle navigation"
@@ -35,7 +35,7 @@
           >
             <div class="avatar avatar-sm avatar-online">
               <img
-                src="/dashboard_images/assets/img/avatars/profiles/avatar-1.jpg"
+                src="/dashboard_assets/assets/img/avatars/profiles/avatar-1.jpg"
                 class="avatar-img rounded-circle"
                 alt="..."
               >
@@ -465,7 +465,7 @@
             >
               <div class="avatar avatar-sm avatar-online">
                 <img
-                  src="/dashboard_images/assets/img/avatars/profiles/avatar-1.jpg"
+                  src="/dashboard_assets/assets/img/avatars/profiles/avatar-1.jpg"
                   class="avatar-img rounded-circle"
                   alt="..."
                 >

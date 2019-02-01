@@ -6,7 +6,7 @@ Vue.use(Vuex)
 const state = {
   callingAPI: false,
   searching: '',
-  serverURI: 'https://creditrapide.herokuapp.com/api/',
+  serverURI: 'http://poic.local/api/',
   user: null,
   token: null,
   ignoreAuthToken: false,

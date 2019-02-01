@@ -214,7 +214,7 @@
         <div class="dropdown mr-4 d-none d-md-flex">
           <!-- Toggle -->
           <a
-            href="#"
+            href="#""
             class="text-muted"
             role="button"
             data-toggle="dropdown"
@@ -459,7 +459,7 @@
         <div class="dropdown">
           <!-- Toggle -->
           <a
-            href="#"
+            href="#""
             class="avatar avatar-sm avatar-online dropdown-toggle"
             role="button"
             data-toggle="dropdown"

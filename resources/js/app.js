@@ -10,6 +10,8 @@ import  './bootstrap';
 import Vue from 'vue';
 import Routes from '@/js/routes.js';
 import App from '@/js/views/App'
+import store from '@/js/store'
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -32,6 +34,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     router: Routes,
+    store: store,
     render: h => h(App)
 });
 export default app;
+
+store.getters.isAuthenticated ? axios.defaults.headers.common['Authorization'] = localStorage.getItem('token') : ""
+

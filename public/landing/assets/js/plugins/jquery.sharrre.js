@@ -518,8 +518,8 @@
             $(this.element).html(template);
         } else { //template by defaults
             $(this.element).html(
-                '<div class="box"><a class="count" href="#">' + total + '</a>' +
-                (this.options.title !== '' ? '<a class="share" href="#">' + this.options.title + '</a>' : '') +
+                '<div class="box"><a class="count" get="#>' + total + '</a>' +
+                (this.options.title !== '' ? '<a class="share" get="#>' + this.options.title + '</a>' : '') +
                 '</div>'
             );
         }

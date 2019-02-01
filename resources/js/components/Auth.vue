@@ -22,7 +22,7 @@
                 </p>
 
                 <!-- Form -->
-                <form @form.prevent="clickRegister" >
+                <form @submit="clickRegister" >
 
                     <!-- Email address -->
                     <div class="form-group">
@@ -33,7 +33,7 @@
                     </label>
 
                     <!-- Input -->
-                    <input type="email" class="form-control" placeholder="name@address.com">
+                    <input type="email" class="form-control" v-model="userSignUp.email" placeholder="name@address.com">
 
                     </div>
 
@@ -46,7 +46,7 @@
                         <label>Firstname</label>
 
                         <!-- Input -->
-                        <input type="text" class="form-control" placeholder="firstname">
+                        <input type="text" class="form-control" v-model="userSignUp.firstname" placeholder="firstname">
                         </div>
 
                         <div class="col-md-6">
@@ -54,7 +54,7 @@
                         <label>Lastname</label>
 
                         <!-- Input -->
-                        <input type="text" class="form-control" placeholder="lastname">
+                        <input type="text" class="form-control" v-model="userSignUp.lastname" placeholder="lastname">
                         </div>
 
                         </div>
@@ -68,7 +68,7 @@
                     </label>
 
                     <!-- Input -->
-                    <input type="phone" class="form-control" placeholder="08012345678">
+                    <input type="phone" class="form-control" v-model="userSignUp.phone" placeholder="08012345678">
 
                     </div>
 
@@ -85,7 +85,7 @@
                     <div class="input-group input-group-merge">
 
                         <!-- Input -->
-                        <input type="password" class="form-control form-control-appended" placeholder="Enter your password">
+                        <input type="password" v-model="userSignUp.password" class="form-control form-control-appended" placeholder="Enter your password">
 
                         <!-- Icon -->
                         <div class="input-group-append">
@@ -109,7 +109,7 @@
                     <div class="input-group input-group-merge">
 
                         <!-- Input -->
-                        <input type="password" class="form-control form-control-appended" placeholder="Enter your password">
+                        <input type="password" v-model="userSignUp.password_confirmation" class="form-control form-control-appended" placeholder="Enter your password">
 
                         <!-- Icon -->
                         <div class="input-group-append">
@@ -122,14 +122,16 @@
                     </div>
 
                     <!-- Submit -->
-                    <button class="btn btn-lg btn-block btn-primary mb-3">
-                    Sign up
+                    <button class="btn btn-lg btn-block btn-primary mb-3" :disabled="loading"
+                    type="submit" >
+                     <i v-if="loading" class="fa fa-circle-o-notch fa-spin"></i>
+                    <span v-if="!loading">Sign Up</span>
                     </button>
 
                     <!-- Link -->
                     <div class="text-center">
                     <small class="text-muted text-center">
-                        Already have an account? <a  @click="showSignIn = true; showSignUp = false; showForgot = false;" >Log in</a>.
+                        Already have an account? <a  href="#" @click="showSignIn = true; showSignUp = false; showForgot = false" >Log in</a>.
                     </small>
 
 
@@ -155,7 +157,7 @@
           </p>
 
           <!-- Form -->
-          <form>
+          <form @submit="clickLogin" >
 
             <!-- Email address -->
             <div class="form-group">
@@ -166,7 +168,7 @@
               </label>
 
               <!-- Input -->
-              <input type="email" class="form-control" placeholder="name@address.com">
+              <input type="email" v-model="userSignIn.email" class="form-control" placeholder="name@address.com">
 
             </div>
 
@@ -180,22 +182,24 @@
               </label>
 
               <!-- Input -->
-              <input type="password" class="form-control" placeholder="password">
+              <input type="password" v-model="userSignIn.password" class="form-control" placeholder="password">
 
             </div>
 
              <!-- Submit -->
-            <button class="btn btn-lg btn-block btn-primary mb-3">
-              Sign In
+            <button class="btn btn-lg btn-block btn-primary mb-3" :disabled="loading"
+                    type="submit" >
+                     <i v-if="loading" class="fa fa-circle-o-notch fa-spin"></i>
+                    <span v-if="!loading">Sign In</span>
             </button>
 
             <!-- Link -->
             <div class="text-center">
               <small class="text-muted text-center">
-                Dont have an account? <a  @click="showSignUp = true; showForgot = false; showSignIn = false;" >Sign Up</a>.
+                Dont have an account? <a  href="#" @click="showSignUp = true; showForgot = false; showSignIn = false;" >Sign Up</a>.
               </small>
               <small class="text-muted text-center">
-                Forgot Password? <a  @click="showForgot = true; showSignUp = false; showSignIn = false;" >Forgot</a>.
+                Forgot Password? <a  href="#" @click="showForgot = true; showSignUp = false; showSignIn = false;" >Forgot</a>.
               </small>
             </div>
 
@@ -208,8 +212,6 @@
           </transition>
 
           </div>
-
-
           <div v-show="showForgot">
 
         <transition name="component-fade" mode="out-in">
@@ -244,13 +246,9 @@
             <!-- Link -->
             <div class="text-center">
               <small class="text-muted text-center">
-                Back to Login?<a  @click="showSignUp = false; showForgot = false; showSignIn = true;" >Sign In</a>.
+                Back to Login?<a  href="#" @click="showSignUp = false; showForgot = false; showSignIn = true;" >Sign In</a>.
               </small>
             </div>
-
-
-
-
           </form>
             </div>
 
@@ -270,6 +268,8 @@ export default {
             showSignUp: false,
             showForgot: false,
             showSignIn: true,
+            loading: false,
+            url: '',
             userSignUp: {
                 'email': '',
                 'firstname': '',
@@ -286,11 +286,12 @@ export default {
     },
     methods: {
         validateRegister () {
-            if (!this.validateEmail(this.userSignUp.email)) return toastr.warning ("Invalid Email field");
-            if (this.userSignUp.firstname.length < 3  || this.userSignUp.lastname.length < 3 ) return toastr.warning("Firstname or Lastname fields cant be empty")
-            if (this.userSignUp.phone.length < 11) return toastr.warning ("Invalid Phone Number")
-            if (this.userSignUp.password.length < 5) return toastr.warning("Please use a stronger password");
-            if (this.userSignUp.password !== this.userSignUp.password_confirmation) return toastr.warning ("Passwords do not match")
+            if (!this.validateEmail(this.userSignUp.email))  return toastr.warning ("Invalid Email field") ;
+            if (this.userSignUp.firstname.length < 3  || this.userSignUp.lastname.length < 3 )  return toastr.warning("Firstname or Lastname fields cant be empty")
+            if (this.userSignUp.phone.length < 11)  return toastr.warning ("Invalid Phone Number")
+            if (this.userSignUp.password.length < 5)  return toastr.warning("Please use a stronger password");
+            if (this.userSignUp.password !== this.userSignUp.password_confirmation)  return toastr.warning ("Passwords do not match")
+
             return true;
         },
          validateEmail(email) {
@@ -298,11 +299,67 @@ export default {
             return re.test(String(email).toLowerCase());
         },
         clickRegister() {
-            console.log("Ooops")
-            if (this.validateRegister()) {
-                console.log("Now lets start")
+            console.log(this.validateRegister())
+            if (this.validateRegister() === true) {
+                this.toggleLoading();
+                axios.post (this.url + 'register', this.userSignUp).then (response => {
+                    this.handleResponse(response.data);
+                }).catch (error => {
+                    this.handleError(error)
+                })
             }
-        }
+        },
+          toggleLoading() {
+            this.loading = !this.loading;
+        },
+        handleResponse (data) {
+            console.log(data);
+            return;
+            if (data.success) {
+                toastr.success(data.message);
+                this.userSignUp = ''
+                this.userSignIn = ''
+                setTimeout(() => {
+                    location.reload()
+                }, 3000);
+            }else {
+                toastr.warning (data.error);
+            }
+            this.toggleLoading();
+        },
+        handleError (error) {
+             if (error.response) {
+                if (error.response.status === 422) {
+                Object.values(error.response.data.error).forEach( function (element) {
+                toastr.error(element)})
+                } else {
+                    toastr.error ("a server error occured")
+                }
+            }else {
+                toastr.error("Oops! Bad Network Connection")
+            }
+            this.toggleLoading();
+        },
+         validateLogin () {
+            if (!this.validateEmail(this.userSignIn.email)) return toastr.warning ("Email is not valid");
+            if (this.userSignIn.password.length < 5) return toastr.warning ("Password too short");
+            return true;
+        },
+
+     clickLogin () {
+         if (this.validateLogin() == true) {
+             this.toggleLoading()
+             axios.post(this.url + 'login', this.userSignIn).then (response => {
+                 this.handleResponse(response.data)
+             }).catch (error => {
+                 this.handleError(error);
+             })
+         }
+     }
+    },
+    mounted () {
+        this.url = this.$store.state.serverURI
+        console.log(this.url)
     }
 
 }

@@ -5,7 +5,7 @@
                     <img src="/landing/assets/img/logo-white.png"  class="img-fluid img-white" style="width: 50%;" alt="">
                     <img src="/landing/assets/img/logo-white.png"class="img-fluid img-blue" alt="">
                 </a>
-                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
+                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" href="#"navigation" aria-controls="navigation-index"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar bar1"></span>
                     <span class="navbar-toggler-bar bar2"></span>

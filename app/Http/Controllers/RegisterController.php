@@ -33,7 +33,7 @@ class RegisterController extends Controller
         ];
         $validator = Validator::make($data, $rules);
         if($validator->fails()) {
-            return response()->json(['success'=> false, 'error'=> $validator->messages()]);
+            return response()->json(['success'=> false, 'error'=> $validator->messages()], 422);
         }
 
         $data['email_token'] = str_random(30); //Generate verification code
@@ -48,7 +48,7 @@ class RegisterController extends Controller
 
         }, 4);
 
-        return response()->json(['success'=> true, 'message'=> 'Thanks for signing up! Please check your email to complete your registration.']);
+        return response()->json(['success'=> true, 'message'=> 'Thanks for signing up! Please check your email to complete your registration.'], 200);
 
 
     }

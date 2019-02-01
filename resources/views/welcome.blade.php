@@ -7,7 +7,7 @@
         <div class="container">
             <div class="content-center brand text-left">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-8" >
                         <h2 class="mb-4 exh ">Professor Ogundipe <span class="text-orange">Innovative</span> Challenge</h2>
                         <p class="text-white">Do you have an innovative idea or technology-driven solution? Apply for POIC</p>
 
@@ -21,7 +21,7 @@
                             </a> -->
                     </div>
                     <div class="col-md-4">
-                        <img style="height: 600px; width: 350px" src="/landing/assets/img/home-head.png" class="img-fluid land-illust" alt="">
+                        <img  src="/landing/assets/img/home-head.png" class="img-fluid img-md land-illust img-responsive" alt="">
                     </div>
                 </div>
 
@@ -110,7 +110,7 @@
                         <div class="card-body">
                             <h3 class="mt-5 mb-0 font-weight-bold">got Inquiries?</h3>
                             <p>For Sponsorship and Contact details, we are ready to heed your calls</p>
-                            <a class=" btn btn-lg btn-orange text-center" data-toggle="modal" data-target="#contactForm" >Message
+                            <a class=" btn btn-lg btn-orange text-center" data-toggle="modal" href="#"contactForm" >Message
                                 </a>
                         </div>
                     </div>
