@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+use Hash;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use Tymon\JWTAuth\Contracts\JWTSubject;
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable
 {
     use Notifiable;
 
@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'firstname' , 'lastname', 'email', 'password', 'email_token',
+        'firstname' , 'lastname', 'email', 'password', 'email_token', 'verified'
     ];
 
     /**
@@ -29,22 +29,8 @@ class User extends Authenticatable implements JWTSubject
         'password', 'remember_token',
     ];
 
-        /**
-     * Get the identifier that will be stored in the subject claim of the JWT.
-     *
-     * @return mixed
-     */
-    public function getJWTIdentifier()
+    public function setPasswordAttribute($value)
     {
-        return $this->getKey();
-    }
-    /**
-     * Return a key value array, containing any custom claims to be added to the JWT.
-     *
-     * @return array
-     */
-    public function getJWTCustomClaims()
-    {
-        return [];
+        $this->attributes['password'] = Hash::make($value);
     }
 }

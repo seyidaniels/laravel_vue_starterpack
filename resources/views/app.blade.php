@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="dashboard_assets/assets/fonts/feather/feather.min.css">
     <link rel="stylesheet" href="dashboard_assets/assets/libs/highlight.js/styles/vs2015.css">
     <link rel="stylesheet" href="dashboard_assets/assets/libs/quill/dist/quill.core.css">
-    <link rel="stylesheet" href="dashboard_assets/assets/libs/select2/dist/css/select2.min.css">
+
     <link rel="stylesheet" href="dashboard_assets/assets/libs/flatpickr/dist/flatpickr.min.css">
 
     <!-- Theme CSS -->
@@ -32,12 +32,14 @@
     <body>
 
        <div id="app"></div>
+
        <script src="{{asset('js/app.js')}}"></script>
+
 
     <!-- JAVASCRIPT
     ================================================== -->
     <!-- Libs JS -->
-    <script src="dashboard_assets/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="dashboard_assets/assets/libs/jquery/dist/jquery.min.js"></script> --}}
     <script src="dashboard_assets/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="dashboard_assets/assets/libs/chart.js/dist/Chart.min.js"></script>
     <script src="dashboard_assets/assets/libs/chart.js/Chart.extension.min.js"></script>
@@ -51,5 +53,7 @@
 
     <!-- Theme JS -->
     <script src="dashboard_assets/assets/js/theme.min.js"></script>
+
+
     </body>
 </html>

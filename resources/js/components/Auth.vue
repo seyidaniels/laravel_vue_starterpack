@@ -22,7 +22,7 @@
                 </p>
 
                 <!-- Form -->
-                <form>
+                <form @form.prevent="clickRegister" >
 
                     <!-- Email address -->
                     <div class="form-group">
@@ -58,6 +58,20 @@
                         </div>
 
                         </div>
+
+                         <!-- Phone Number -->
+                    <div class="form-group">
+
+                    <!-- Label -->
+                    <label>
+                        Phone Number
+                    </label>
+
+                    <!-- Input -->
+                    <input type="phone" class="form-control" placeholder="08012345678">
+
+                    </div>
+
 
                     <!-- Password -->
                     <div class="form-group">
@@ -115,7 +129,7 @@
                     <!-- Link -->
                     <div class="text-center">
                     <small class="text-muted text-center">
-                        Already have an account? <a href="#" @click="showSignIn = true; showSignUp = false; showForgot = false;" >Log in</a>.
+                        Already have an account? <a  @click="showSignIn = true; showSignUp = false; showForgot = false;" >Log in</a>.
                     </small>
 
 
@@ -178,10 +192,10 @@
             <!-- Link -->
             <div class="text-center">
               <small class="text-muted text-center">
-                Dont have an account? <a href="#" @click="showSignUp = true; showForgot = false; showSignIn = false;" >Sign Up</a>.
+                Dont have an account? <a  @click="showSignUp = true; showForgot = false; showSignIn = false;" >Sign Up</a>.
               </small>
               <small class="text-muted text-center">
-                Forgot Password? <a href="#" @click="showForgot = true; showSignUp = false; showSignIn = false;" >Forgot</a>.
+                Forgot Password? <a  @click="showForgot = true; showSignUp = false; showSignIn = false;" >Forgot</a>.
               </small>
             </div>
 
@@ -230,7 +244,7 @@
             <!-- Link -->
             <div class="text-center">
               <small class="text-muted text-center">
-                Back to Login?<a href="#" @click="showSignUp = false; showForgot = false; showSignIn = true;" >Sign In</a>.
+                Back to Login?<a  @click="showSignUp = false; showForgot = false; showSignIn = true;" >Sign In</a>.
               </small>
             </div>
 
@@ -272,12 +286,31 @@ export default {
     },
     methods: {
         validateRegister () {
-
+            if (!this.validateEmail(this.userSignUp.email)) return toastr.warning ("Invalid Email field");
+            if (this.userSignUp.firstname.length < 3  || this.userSignUp.lastname.length < 3 ) return toastr.warning("Firstname or Lastname fields cant be empty")
+            if (this.userSignUp.phone.length < 11) return toastr.warning ("Invalid Phone Number")
+            if (this.userSignUp.password.length < 5) return toastr.warning("Please use a stronger password");
+            if (this.userSignUp.password !== this.userSignUp.password_confirmation) return toastr.warning ("Passwords do not match")
+            return true;
+        },
+         validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        },
+        clickRegister() {
+            console.log("Ooops")
+            if (this.validateRegister()) {
+                console.log("Now lets start")
+            }
         }
     }
 
 }
-</script>
+</script>1
+
+
+
+
 <style>
 .component-fade-enter-active, .component-fade-leave-active {
   transition: opacity .3s ease;

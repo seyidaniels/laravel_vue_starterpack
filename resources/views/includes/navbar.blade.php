@@ -20,7 +20,7 @@ navbar navbar-expand-lg bg-dark fixed-top
         <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link page-scroll" href="#">
+                    <a class="nav-link page-scroll" href="#"  >
                         <p>Home </p>
                     </a>
                 </li>
@@ -30,7 +30,7 @@ navbar navbar-expand-lg bg-dark fixed-top
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-size: 14px;">
+                    <a class="nav-link" href="#"   style="font-size: 14px;">
                         Rules
                     </a>
                 </li>

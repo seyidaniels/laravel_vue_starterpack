@@ -15,17 +15,17 @@
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#">
+                        <a class="nav-link page-scroll" href="#"  >
                             <p>Home</p>
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a href="#" class="nav-link "style="font-size: 14px;">
+                        <a href="#"   class="nav-link "style="font-size: 14px;">
                            Timeline
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="font-size: 14px;">
+                        <a class="nav-link" href="#"   style="font-size: 14px;">
                             Rules
                         </a>
                     </li>

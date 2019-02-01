@@ -2014,13 +2014,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       showSignUp: false,
       showForgot: false,
-      showSignIn: true
+      showSignIn: true,
+      userSignUp: {
+        'email': '',
+        'firstname': '',
+        'lastname': '',
+        'phone': '',
+        'password': '',
+        'password_confirmation': ''
+      },
+      userSignIn: {
+        'email': '',
+        'password': ''
+      }
     };
+  },
+  methods: {
+    validateRegister: function validateRegister() {
+      if (!this.validateEmail(this.userSignUp.email)) return toastr.warning("Invalid Email field");
+      if (this.userSignUp.firstname.length < 3 || this.userSignUp.lastname.length < 3) return toastr.warning("Firstname or Lastname fields cant be empty");
+      if (this.userSignUp.phone.length < 11) return toastr.warning("Invalid Phone Number");
+      if (this.userSignUp.password.length < 5) return toastr.warning("Please use a stronger password");
+      if (this.userSignUp.password !== this.userSignUp.password_confirmation) return toastr.warning("Passwords do not match");
+      return true;
+    },
+    validateEmail: function validateEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    },
+    clickRegister: function clickRegister() {
+      console.log("Ooops");
+
+      if (this.validateRegister()) {
+        console.log("Now lets start");
+      }
+    }
   }
 });
 
@@ -39091,144 +39138,182 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _c("form", [
-                        _c("div", { staticClass: "form-group" }, [
-                          _c("label", [
-                            _vm._v(
-                              "\n                    Email Address\n                "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "email",
-                              placeholder: "name@address.com"
+                      _c(
+                        "form",
+                        {
+                          on: {
+                            form: function($event) {
+                              $event.preventDefault()
+                              return _vm.clickRegister($event)
                             }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group row" }, [
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c("label", [_vm._v("Firstname")]),
+                          }
+                        },
+                        [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("label", [
+                              _vm._v(
+                                "\n                    Email Address\n                "
+                              )
+                            ]),
                             _vm._v(" "),
                             _c("input", {
                               staticClass: "form-control",
-                              attrs: { type: "text", placeholder: "firstname" }
+                              attrs: {
+                                type: "email",
+                                placeholder: "name@address.com"
+                              }
                             })
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c("label", [_vm._v("Lastname")]),
+                          _c("div", { staticClass: "form-group row" }, [
+                            _c("div", { staticClass: "col-md-6" }, [
+                              _c("label", [_vm._v("Firstname")]),
+                              _vm._v(" "),
+                              _c("input", {
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "firstname"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-md-6" }, [
+                              _c("label", [_vm._v("Lastname")]),
+                              _vm._v(" "),
+                              _c("input", {
+                                staticClass: "form-control",
+                                attrs: { type: "text", placeholder: "lastname" }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("label", [
+                              _vm._v(
+                                "\n                    Phone Number\n                "
+                              )
+                            ]),
                             _vm._v(" "),
                             _c("input", {
                               staticClass: "form-control",
-                              attrs: { type: "text", placeholder: "lastname" }
+                              attrs: {
+                                type: "phone",
+                                placeholder: "08012345678"
+                              }
                             })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group" }, [
-                          _c("label", [
-                            _vm._v(
-                              "\n                    Password\n                "
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("label", [
+                              _vm._v(
+                                "\n                    Password\n                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "input-group input-group-merge" },
+                              [
+                                _c("input", {
+                                  staticClass:
+                                    "form-control form-control-appended",
+                                  attrs: {
+                                    type: "password",
+                                    placeholder: "Enter your password"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "input-group-append" },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "input-group-text" },
+                                      [_c("i", { staticClass: "fe fe-eye" })]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("label", [
+                              _vm._v(
+                                "\n                    Confirm Password\n                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "input-group input-group-merge" },
+                              [
+                                _c("input", {
+                                  staticClass:
+                                    "form-control form-control-appended",
+                                  attrs: {
+                                    type: "password",
+                                    placeholder: "Enter your password"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "input-group-append" },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "input-group-text" },
+                                      [_c("i", { staticClass: "fe fe-eye" })]
+                                    )
+                                  ]
+                                )
+                              ]
                             )
                           ]),
                           _vm._v(" "),
                           _c(
-                            "div",
-                            { staticClass: "input-group input-group-merge" },
-                            [
-                              _c("input", {
-                                staticClass:
-                                  "form-control form-control-appended",
-                                attrs: {
-                                  type: "password",
-                                  placeholder: "Enter your password"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "span",
-                                  { staticClass: "input-group-text" },
-                                  [_c("i", { staticClass: "fe fe-eye" })]
-                                )
-                              ])
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group" }, [
-                          _c("label", [
-                            _vm._v(
-                              "\n                    Confirm Password\n                "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "input-group input-group-merge" },
-                            [
-                              _c("input", {
-                                staticClass:
-                                  "form-control form-control-appended",
-                                attrs: {
-                                  type: "password",
-                                  placeholder: "Enter your password"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "span",
-                                  { staticClass: "input-group-text" },
-                                  [_c("i", { staticClass: "fe fe-eye" })]
-                                )
-                              ])
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-lg btn-block btn-primary mb-3"
-                          },
-                          [
-                            _vm._v(
-                              "\n                Sign up\n                "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "text-center" }, [
-                          _c(
-                            "small",
-                            { staticClass: "text-muted text-center" },
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-lg btn-block btn-primary mb-3"
+                            },
                             [
                               _vm._v(
-                                "\n                    Already have an account? "
-                              ),
-                              _c(
-                                "a",
-                                {
-                                  attrs: { href: "#" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.showSignIn = true
-                                      _vm.showSignUp = false
-                                      _vm.showForgot = false
-                                    }
-                                  }
-                                },
-                                [_vm._v("Log in")]
-                              ),
-                              _vm._v(".\n                ")
+                                "\n                Sign up\n                "
+                              )
                             ]
-                          )
-                        ])
-                      ])
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "text-center" }, [
+                            _c(
+                              "small",
+                              { staticClass: "text-muted text-center" },
+                              [
+                                _vm._v(
+                                  "\n                    Already have an account? "
+                                ),
+                                _c(
+                                  "a",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.showSignIn = true
+                                        _vm.showSignUp = false
+                                        _vm.showForgot = false
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("Log in")]
+                                ),
+                                _vm._v(".\n                ")
+                              ]
+                            )
+                          ])
+                        ]
+                      )
                     ])
                   ]
                 )
@@ -39301,7 +39386,6 @@ var render = function() {
                               _c(
                                 "a",
                                 {
-                                  attrs: { href: "#" },
                                   on: {
                                     click: function($event) {
                                       _vm.showSignUp = true
@@ -39324,7 +39408,6 @@ var render = function() {
                               _c(
                                 "a",
                                 {
-                                  attrs: { href: "#" },
                                   on: {
                                     click: function($event) {
                                       _vm.showForgot = true
@@ -39403,7 +39486,6 @@ var render = function() {
                               _c(
                                 "a",
                                 {
-                                  attrs: { href: "#" },
                                   on: {
                                     click: function($event) {
                                       _vm.showSignUp = false

@@ -1,6 +1,6 @@
 <?php
-Route::post('register', 'AuthController@register');
-Route::post('login', 'AuthController@login');
+Route::post('register', 'RegisterController@register');
+Route::post('login', 'LoginController@login');
 Route::post('recover', 'AuthController@recover');
 Route::group(['middleware' => ['jwt.auth']], function() {
     Route::get('logout', 'AuthController@logout');
